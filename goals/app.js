@@ -230,10 +230,12 @@ function renderRoutines() {
   const emptyEl = $("#routine-empty");
   const pageLabel = $("#routine-page-label");
 
-  let list = [...state.routines];
+let list;
   if (routineScope === "day") {
-    const key = fmtDate(selectedDate);
-    list = list.filter((r) => r.date === key);
+    // Tekrar (daily/weekly) mantığını da kullanarak sadece seçili güne düşenleri getir
+    list = getRoutinesForDate(selectedDate);
+  } else {
+    list = [...state.routines]; // Tümü modunda ham liste
   }
 
   list.sort((a, b) => {
