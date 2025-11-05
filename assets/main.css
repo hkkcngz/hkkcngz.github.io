@@ -521,6 +521,19 @@ body {
   width: 20px;
 }
 
+a.btn {
+    background: #ffdc25;
+    color: black;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+}
+
+a.btn:hover {
+    background: #ffae00;
+}
+
 @-webkit-keyframes fade {
   from {
     opacity: 0;
